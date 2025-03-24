@@ -1,0 +1,153 @@
+/* public/style.css */
+:root {
+    /* Light theme (default) */
+    --background-color: #f0f0f0;
+    --container-bg: white;
+    --text-color: black;
+    --input-border: #ddd;
+    --message-own-bg: #007bff;
+    --message-own-text: white;
+    --message-other-bg: #e9ecef;
+    --message-other-text: black;
+    --button-bg: #007bff;
+    --button-hover-bg: #0056b3;
+    --button-text: white;
+}
+
+body.dark-theme {
+    /* Dark theme */
+    --background-color: #1a1a1a;
+    --container-bg: #2d2d2d;
+    --text-color: #ffffff;
+    --input-border: #555;
+    --message-own-bg: #1e90ff;
+    --message-own-text: white;
+    --message-other-bg: #444;
+    --message-other-text: #ddd;
+    --button-bg: #1e90ff;
+    --button-hover-bg: #4682b4;
+    --button-text: white;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
+.login-container, .chat-container {
+    width: 600px;
+    background: var(--container-bg);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-container h1, .chat-container h1 {
+    margin-top: 0;
+}
+
+#loginForm {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#usernameInput {
+    padding: 10px;
+    border: 1px solid var(--input-border);
+    border-radius: 5px;
+    background: var(--container-bg);
+    color: var(--text-color);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#themeToggle {
+    padding: 5px 10px;
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#themeToggle:hover {
+    background-color: var(--button-hover-bg);
+}
+
+#messages {
+    height: 500px;
+    overflow-y: auto;
+    margin-bottom: 20px;
+    border: 1px solid var(--input-border);
+    padding: 10px;
+}
+
+#messageForm {
+    display: flex;
+    gap: 10px;
+}
+
+#messageInput {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid var(--input-border);
+    border-radius: 5px;
+    background: var(--container-bg);
+    color: var(--text-color);
+}
+
+button {
+    padding: 5px 10px;
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--button-hover-bg);
+}
+
+/* Message styling */
+.message {
+    margin: 10px 0;
+    padding: 8px 12px;
+    border-radius: 5px;
+    max-width: 70%;
+    word-wrap: break-word;
+}
+
+.message .username {
+    font-size: 0.9em;
+    font-weight: bold;
+    margin-bottom: 4px;
+    display: block;
+}
+
+.own {
+    margin-left: auto;
+    background-color: var(--message-own-bg);
+    color: var(--message-own-text);
+    text-align: right;
+}
+
+.other {
+    margin-right: auto;
+    background-color: var(--message-other-bg);
+    color: var(--message-other-text);
+    text-align: left;
+}
